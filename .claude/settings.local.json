@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cargo fmt:*)",
+      "Bash(cargo check:*)",
+      "Bash(cargo build:*)",
+      "Bash(cargo test:*)",
+      "Bash(cargo bench:*)",
+      "Bash(uv run pytest:*)",
+      "Bash(uv run maturin:*)",
+      "Bash(uv run mypy .:*)",
+      "Bash(uv run ruff format:*)",
+      "Bash(uv run ruff check:*)",
+      "Bash(uv run ty check: *)",
+      "Bash(just tidy:*)",
+      "Bash(just clean:*)",
+      "Bash(just fmt:*)",
+      "Bash(just build:*)",
+      "Bash(just check:*)",
+      "Bash(just test:*)",
+      "Bash(just bench:*)",
+      "Bash(just release)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

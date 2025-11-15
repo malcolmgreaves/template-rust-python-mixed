@@ -1,0 +1,28 @@
+[package]
+name = "pyo3-example"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "pyo3_example"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# Don't use extension-module feature by default (for tests/benchmarks)
+# Maturin will enable it automatically when building the Python extension
+pyo3 = { version = "0.27", features = [] }
+# Local dependency on fictional-project Rust crate
+fictional-project = { path = "../../rust/fictional-project" }
+
+[dev-dependencies]
+criterion = "0.5"
+
+[build-dependencies]
+pyo3-build-config = "0.27"
+
+[[bench]]
+name = "pyo3_benchmarks"
+harness = false
+
+[package.metadata.cargo-machete]
+ignored = ["pyo3-build-config"]

@@ -1,0 +1,18 @@
+[workspace]
+resolver = "2"
+members = [
+    "rust/fictional-project",
+]
+# PyO3 packages must be built with maturin, not cargo build
+exclude = [
+    "mixed/pyo3-example",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+authors = ["Malcolm Greaves <greaves.malcolm@gmail.com>"]
+license = "MPL-2.0"
+
+[workspace.dependencies]
+# Shared dependencies can be defined here

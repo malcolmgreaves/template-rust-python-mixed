@@ -1,0 +1,37 @@
+[project]
+name = "pyo3-example"
+version = "0.1.0"
+description = "PyO3 example bridging Rust and Python"
+readme = "README.md"
+authors = [
+    { name = "Malcolm Greaves", email = "greaves.malcolm@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    # Local dependency on fictional-project Python package
+    "fictional-project",
+]
+
+[tool.uv.sources]
+fictional-project = { workspace = true }
+
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[tool.maturin]
+python-source = "python"
+module-name = "pyo3_example._core"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.1",
+    "pytest-benchmark>=5.2.3",
+    "maturin>=1.8.1",
+]
+
+[tool.pytest.ini_options]
+markers = [
+  "benchmark: marks tests as benchmarks (deselect with '-m \"not benchmark\"')",
+]
+addopts = "-m 'not benchmark'"

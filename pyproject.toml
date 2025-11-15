@@ -1,0 +1,25 @@
+[tool.uv.workspace]
+members = ["python/fictional-project", "mixed/pyo3-example"]
+
+[tool.uv]
+dev-dependencies = [
+    "ipdb>=0.13.13",
+    "ipython>=9.7.0",
+    "jupyterlab>=4.4.10",
+    "mypy>=1.18.2",
+    "pytest>=9.0.1",
+    "pytest-benchmark>=5.2.3",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.14.5",
+    "ty>=0.0.1a26",
+]
+
+[tool.pytest.ini_options]
+markers = [
+  "benchmark: marks tests as benchmarks (deselect with '-m \"not benchmark\"')",
+]
+addopts = "-m 'not benchmark'"
+
+[build-system]
+requires = ["uv_build>=0.9.9,<0.10.0"]
+build-backend = "uv_build"
